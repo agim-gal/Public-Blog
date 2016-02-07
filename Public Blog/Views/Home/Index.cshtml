@@ -1,0 +1,12 @@
+﻿@using Public_Blog.Models
+@model List<PostView>
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Partial("ListPost", Model)
+
+@{
+    DataPaging dataPaging = (DataPaging)ViewBag.dataPaging;
+    @Html.Partial("Paging", dataPaging)
+}

@@ -1,0 +1,51 @@
+﻿@using Public_Blog.Models
+@model PostView
+
+<div class="post" id="post_@Model.id_post" >
+    
+    @*Ссылка на пользователя, который создал пост*@
+    <h4 style="margin-top: 3px; margin-bottom: 3px;">
+        @Html.ActionLink(Model.username, "User", "Posts", new {parameter = Model.username, page = 1}, null)
+    </h4>
+
+    @*список тегов с ссылками*@
+    @foreach (string tag in Model.tags)
+    {
+        @Html.ActionLink(tag, "Tag", "Posts", new {parameter = tag, page = 1}, null)
+        <span></span>
+    }
+
+    @*Заголовок с сылкой на пост*@
+    <h3 style="margin-top: 3px; margin-bottom: 3px;">
+        @Html.ActionLink(Model.Header, "Index", "Post", new {id = Model.id_post}, null)
+    </h3>
+
+    @*Текст поста*@
+    <p>@Model.textContent</p>
+
+    @*Изображение*@
+    @if (Model.id_image != 0)
+    {
+        <img class="img-responsive" alt="Responsive image" style="margin-top: 5px"
+             src="@Url.Action("GetImage", "Image", new {id = Model.id_image})"/>
+    }
+
+    @*сслылка "удалить"*@  
+    <div id="removeLink_@Model.id_post">
+        @*Если пост принадлежит данному пользователю*@  
+        @if(Model.username == User.Identity.Name)
+        {
+            //то создаём ajax-ссылку "удалить"
+            var ajaxOptions = new AjaxOptions()
+            {
+                //с обработчиком события выполнения OnSuccess, который находится в Scripts/AppScripts/remove-post
+                OnSuccess = "OnSuccess"
+            };
+            //которая обращается к контролере /ManagePost/Remove
+            @Ajax.ActionLink("удалить", "Remove", "ManagePost", new { id = Model.id_post }, ajaxOptions)
+        }
+    </div>
+
+
+</div>
+

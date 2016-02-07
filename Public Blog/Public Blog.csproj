@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3A8F241-A1E6-4FA9-9A93-9F0CDE40135D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Public_Blog</RootNamespace>
+    <AssemblyName>Public Blog</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <None Include="Scripts\AppScripts\remove-post.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\ManagePostController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122223204_post_start.cs" />
+    <Compile Include="Migrations\201512122223204_post_start.Designer.cs">
+      <DependentUpon>201512122223204_post_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122231214_post_fix1.cs" />
+    <Compile Include="Migrations\201512122231214_post_fix1.Designer.cs">
+      <DependentUpon>201512122231214_post_fix1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122234209_post_fix2.cs" />
+    <Compile Include="Migrations\201512122234209_post_fix2.Designer.cs">
+      <DependentUpon>201512122234209_post_fix2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122317203_tag_start.cs" />
+    <Compile Include="Migrations\201512122317203_tag_start.Designer.cs">
+      <DependentUpon>201512122317203_tag_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122322275_tag_try_fix1.cs" />
+    <Compile Include="Migrations\201512122322275_tag_try_fix1.Designer.cs">
+      <DependentUpon>201512122322275_tag_try_fix1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122323289_tag_back.cs" />
+    <Compile Include="Migrations\201512122323289_tag_back.Designer.cs">
+      <DependentUpon>201512122323289_tag_back.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122337171_tag_back1.cs" />
+    <Compile Include="Migrations\201512122337171_tag_back1.Designer.cs">
+      <DependentUpon>201512122337171_tag_back1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122339478_name_is_key.cs" />
+    <Compile Include="Migrations\201512122339478_name_is_key.Designer.cs">
+      <DependentUpon>201512122339478_name_is_key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512122359293_posts_on_tags.cs" />
+    <Compile Include="Migrations\201512122359293_posts_on_tags.Designer.cs">
+      <DependentUpon>201512122359293_posts_on_tags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512130005303_posts_on_tags1.cs" />
+    <Compile Include="Migrations\201512130005303_posts_on_tags1.Designer.cs">
+      <DependentUpon>201512130005303_posts_on_tags1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512140333103_posts_add_image.cs" />
+    <Compile Include="Migrations\201512140333103_posts_add_image.Designer.cs">
+      <DependentUpon>201512140333103_posts_add_image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512140341263_posts_add_image_fix1.cs" />
+    <Compile Include="Migrations\201512140341263_posts_add_image_fix1.Designer.cs">
+      <DependentUpon>201512140341263_posts_add_image_fix1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512140428201_posts_add_image_fix2.cs" />
+    <Compile Include="Migrations\201512140428201_posts_add_image_fix2.Designer.cs">
+      <DependentUpon>201512140428201_posts_add_image_fix2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512140502077_posts_add_image_fix3.cs" />
+    <Compile Include="Migrations\201512140502077_posts_add_image_fix3.Designer.cs">
+      <DependentUpon>201512140502077_posts_add_image_fix3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512140522076_Images_and_image_in_post.cs" />
+    <Compile Include="Migrations\201512140522076_Images_and_image_in_post.Designer.cs">
+      <DependentUpon>201512140522076_Images_and_image_in_post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512142122410_add_users.cs" />
+    <Compile Include="Migrations\201512142122410_add_users.Designer.cs">
+      <DependentUpon>201512142122410_add_users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512142312572_post_fix11.cs" />
+    <Compile Include="Migrations\201512142312572_post_fix11.Designer.cs">
+      <DependentUpon>201512142312572_post_fix11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512150348037_fix_post.cs" />
+    <Compile Include="Migrations\201512150348037_fix_post.Designer.cs">
+      <DependentUpon>201512150348037_fix_post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512150351227_fix_post_back.cs" />
+    <Compile Include="Migrations\201512150351227_fix_post_back.Designer.cs">
+      <DependentUpon>201512150351227_fix_post_back.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512150352090_try_fix_all.cs" />
+    <Compile Include="Migrations\201512150352090_try_fix_all.Designer.cs">
+      <DependentUpon>201512150352090_try_fix_all.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512192004366_Image-fix_IsUsed.cs" />
+    <Compile Include="Migrations\201512192004366_Image-fix_IsUsed.Designer.cs">
+      <DependentUpon>201512192004366_Image-fix_IsUsed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512192329358_post_fix_no_nullable_field.cs" />
+    <Compile Include="Migrations\201512192329358_post_fix_no_nullable_field.Designer.cs">
+      <DependentUpon>201512192329358_post_fix_no_nullable_field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512212216275_post-tag-remove-required.cs" />
+    <Compile Include="Migrations\201512212216275_post-tag-remove-required.Designer.cs">
+      <DependentUpon>201512212216275_post-tag-remove-required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountModels\AuthorizationModel.cs" />
+    <Compile Include="Models\Configs.cs" />
+    <Compile Include="Models\AccountRepository.cs" />
+    <Compile Include="Models\ContentRepository.cs" />
+    <Compile Include="Models\ModelDB\Image.cs" />
+    <Compile Include="Models\ModelDB\Model1.cs" />
+    <Compile Include="Models\ModelDB\Post.cs" />
+    <Compile Include="Models\ModelDB\Tag.cs" />
+    <Compile Include="Models\ModelDB\User.cs" />
+    <Compile Include="Models\CreatePostModel.cs" />
+    <Compile Include="Models\ViewModels\DataPaging.cs" />
+    <Compile Include="Models\ViewModels\PostView.cs" />
+    <Compile Include="Models\AccountModels\RegisterModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\Post.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
+    <Content Include="Views\Shared\Error404.cshtml" />
+    <Content Include="Views\Shared\ListPost.cshtml" />
+    <Content Include="Views\Posts\User.cshtml" />
+    <Content Include="Views\Shared\Paging.cshtml" />
+    <Content Include="Views\Posts\Tag.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Authorization.cshtml" />
+    <Content Include="Views\ManagePost\Create.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512122223204_post_start.resx">
+      <DependentUpon>201512122223204_post_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122231214_post_fix1.resx">
+      <DependentUpon>201512122231214_post_fix1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122234209_post_fix2.resx">
+      <DependentUpon>201512122234209_post_fix2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122317203_tag_start.resx">
+      <DependentUpon>201512122317203_tag_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122322275_tag_try_fix1.resx">
+      <DependentUpon>201512122322275_tag_try_fix1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122323289_tag_back.resx">
+      <DependentUpon>201512122323289_tag_back.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122337171_tag_back1.resx">
+      <DependentUpon>201512122337171_tag_back1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122339478_name_is_key.resx">
+      <DependentUpon>201512122339478_name_is_key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512122359293_posts_on_tags.resx">
+      <DependentUpon>201512122359293_posts_on_tags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512130005303_posts_on_tags1.resx">
+      <DependentUpon>201512130005303_posts_on_tags1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512140333103_posts_add_image.resx">
+      <DependentUpon>201512140333103_posts_add_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512140341263_posts_add_image_fix1.resx">
+      <DependentUpon>201512140341263_posts_add_image_fix1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512140428201_posts_add_image_fix2.resx">
+      <DependentUpon>201512140428201_posts_add_image_fix2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512140502077_posts_add_image_fix3.resx">
+      <DependentUpon>201512140502077_posts_add_image_fix3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512140522076_Images_and_image_in_post.resx">
+      <DependentUpon>201512140522076_Images_and_image_in_post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512142122410_add_users.resx">
+      <DependentUpon>201512142122410_add_users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512142312572_post_fix11.resx">
+      <DependentUpon>201512142312572_post_fix11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512150348037_fix_post.resx">
+      <DependentUpon>201512150348037_fix_post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512150351227_fix_post_back.resx">
+      <DependentUpon>201512150351227_fix_post_back.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512150352090_try_fix_all.resx">
+      <DependentUpon>201512150352090_try_fix_all.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512192004366_Image-fix_IsUsed.resx">
+      <DependentUpon>201512192004366_Image-fix_IsUsed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512192329358_post_fix_no_nullable_field.resx">
+      <DependentUpon>201512192329358_post_fix_no_nullable_field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512212216275_post-tag-remove-required.resx">
+      <DependentUpon>201512212216275_post-tag-remove-required.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61998</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61998/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,7 @@
+﻿@using Public_Blog.Models
+@model List<PostView>
+
+@foreach (PostView postViev in Model)
+{
+    @Html.Partial("Post",postViev)
+}

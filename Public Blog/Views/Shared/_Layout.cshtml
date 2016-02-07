@@ -1,0 +1,63 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+<div class="navbar navbar-inverse ">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Public blog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-left">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Новый пост", "Create", "ManagePost")</li>
+                }
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Привет, " + User.Identity.Name, "User", "Posts", new { parameter = User.Identity.Name, page = 1 }, null)</li>
+                    <li>@Html.ActionLink("Выход", "LogOut", "Account")</li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
+                    <li>@Html.ActionLink("Авторизация", "Authorization", "Account")</li>
+                }
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+    <footer></footer>
+</div>
+
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/AppScripts")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+    
+
+</body>
+</html>

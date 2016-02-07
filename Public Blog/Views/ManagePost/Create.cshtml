@@ -1,0 +1,70 @@
+﻿@using Public_Blog.Models
+@model CreatePostModel
+
+@using (Html.BeginForm("Create", "ManagePost", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true, "", new { @class = "field-validation-error" })
+    
+    <div class="row">
+        <div class="form-group">
+            <div class="col-lg-1 col-md-1 col-sm-2">
+                @Html.LabelFor(model => model.Header, new {@class = "form-create-new-post"})
+            </div>
+            <div class="col-lg-11 col-md-11, col-sm-10">
+                @Html.TextBoxFor(model => model.Header, new {@class = "form-create-new-post"})
+            </div>
+            @Html.ValidationMessageFor(model => model.Header)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class="col-lg-1 col-md-1 col-sm-2">
+                @Html.LabelFor(model => model.Tags, new { @class = "form-create-new-post" })
+            </div>
+            <div class="col-lg-11 col-md-11, col-sm-10">
+                @Html.TextBoxFor(model => model.Tags, new { @class = "form-create-new-post" })
+            </div>
+            @Html.ValidationMessageFor(model => model.Tags)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class="col-lg-1 col-md-1 col-sm-2">
+                @Html.LabelFor(model => model.Text, new { @class = "form-create-new-post" })
+            </div>
+            <div class="col-lg-11 col-md-11, col-sm-10" >
+                @Html.TextAreaFor(model => model.Text, new { @class = "form-create-new-post", style = "resize: vertical"})
+            </div>
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+    </div>
+
+    <div class ="col-lg-offset-1 col-md-offset-1 col-sm-offset-2 ">
+        <input type="file" name="Image" id="Image"/>
+    </div>
+
+    <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-2" style="padding-top: 10px">
+        <img width="300" id="Image-Display" style="display : none " />
+    </div>
+
+
+    <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-2 " style="padding-top: 10px">
+        <input type="submit" value="отправить" class="btn btn-default" />
+    </div>
+}
+
+
+<script>
+        window.onload = function () {
+            var input = document.getElementById('Image');
+            input.addEventListener('change', handleFiles);
+        }
+
+        function handleFiles(e) {
+            var img = document.getElementById('Image-Display');
+            img.style.display = "block";
+            img.src = URL.createObjectURL(e.target.files[0]);
+        }
+</script>

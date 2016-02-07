@@ -1,0 +1,10 @@
+﻿@using Public_Blog.Models
+@model List<PostView>
+
+<h2>Посты пользователя @ViewBag.dataPaging.parameter</h2>
+@Html.Partial("ListPost", Model)
+
+@{
+    DataPaging dataPaging = (DataPaging)ViewBag.dataPaging;
+    @Html.Partial("Paging",  dataPaging)
+}

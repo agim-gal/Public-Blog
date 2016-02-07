@@ -1,0 +1,60 @@
+﻿@using Public_Blog.Models
+@model DataPaging
+
+
+@{
+    List<int> pageList = new List<int>();
+
+    int maxPage = Model.maxPage;
+    int page = Model.page;
+
+    //если страницы есть
+    if(maxPage>0)
+    {    
+        //определяет сколько количество ссыкол на страницы, соседние для текущей
+        //например, если neighborhoodSize = 2, maxPage = 10, а мы на странице 5,
+        //то будут выведены ссылки на 1, 3, 4, 5, 6, 7, 10 страницы
+        int neighborhoodSize = 2;
+        if (!(maxPage < Model.page || page <= 0))
+        {
+            if (page > neighborhoodSize + 1)
+            {
+                if (1 <= maxPage)
+                {
+                    pageList.Add(1);
+                }
+            }
+        }
+        for (int i = page - neighborhoodSize; i <= page + neighborhoodSize; i++)
+        {
+            if (i <= maxPage && i > 0)
+            {
+                pageList.Add(i);
+            }
+        }
+        if (pageList.Last() < maxPage)
+        {
+            pageList.Add(maxPage);
+
+        }
+    }
+
+
+    <div class="btn-toolbar" role="toolbar" style="margin: 0;">
+        <div class="btn-group">
+            @for (int i = 0; i < pageList.Count; i++)
+            {
+                int num = pageList[i];
+                string action = Url.Action(Model.action, Model.controller, new { parameter = Model.parameter, page = pageList[i] }, null);
+                <button type="button" class='btn btn-default' onclick='window.location = "@action ";'>
+                    @pageList[i]
+                </button>
+                
+            }
+        </div>
+    </div>
+
+}
+
+
+
